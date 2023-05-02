@@ -35,7 +35,7 @@ namespace TriangleProblem.Controllers
                 int[] row = new int[numbers.Length];
                 for (int j = 0; j < numbers.Length; j++)
                 {
-                    if (!int.TryParse(numbers[j], out int number))
+                    if (!int.TryParse(numbers[j], out int number)) 
                     {
                         throw new FormatException($"Invalid number format at row {i + 1}, column {j + 1}");
                     }
