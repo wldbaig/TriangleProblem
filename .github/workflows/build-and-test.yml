@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Build and Test
-      working-directory: ./TriangleProblem
+      working-directory: .
       run: |
         dotnet restore
         dotnet build
