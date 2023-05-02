@@ -43,7 +43,7 @@ namespace TriangleProblem.Controllers
                 }
                 triangle[i] = row;
             }
-            return triangle; 
+            return triangle;
         }
 
         private static int FindMaxTotal(int[][] triangle)
