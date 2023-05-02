@@ -19,9 +19,8 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Build and Test
-      working-directory: ./TriangleProblems.Test
+      working-directory: ./TriangleProblem
       run: |
         dotnet restore
         dotnet build
-        dotnet test
-      shell: bash
+        dotnet test TriangleProblem.Test/TriangleProblem.Test.csproj
