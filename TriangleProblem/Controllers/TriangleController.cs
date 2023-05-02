@@ -14,12 +14,12 @@ namespace TriangleProblem.Controllers
         public ActionResult<int> GetMaxTotal()
         { 
             try
-            {
+            { 
                 int[][] triangle = ReadTriangleFromFile();
                 int maxTotal = FindMaxTotal(triangle);
                 return maxTotal;
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 return BadRequest(ex.Message);
             }
