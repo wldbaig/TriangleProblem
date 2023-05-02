@@ -18,8 +18,9 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
-      - name: Build
-        run: dotnet build --configuration Release
-
-      - name: Test
-        run: dotnet test --configuration Release --no-build
+      - name: Build and Test
+        working-directory: ./test/MyTestProject
+        run: |
+          dotnet restore
+          dotnet build
+          dotnet test
