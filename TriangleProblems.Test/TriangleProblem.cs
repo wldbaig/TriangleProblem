@@ -1,6 +1,6 @@
 using TriangleProblem.Controllers;
 
-namespace TriangleProblems.Test
+namespace TriangleControllers.Test
 {
     [TestFixture]
     public class TriangleControllerTests
@@ -18,50 +18,100 @@ namespace TriangleProblems.Test
             Assert.That(result, Is.EqualTo(732506));
         }
 
-        //[Test]
-        //public void GetMaxTotal_ReturnsExpectedResult_ForTriangleWithOneRow()
-        //{
-        //    // Arrange
-        //    var controller = new TriangleController();
-        //    string triangleText = "5";
-        //    File.WriteAllText("triangle.txt", triangleText);
+        [Test]
+        public void TestFindMaxTotal()
+        {
+            // Arrange
+            int[][] triangle = new int[][] {
+        new int[] { 5 },
+        new int[] { 9, 6 },
+        new int[] { 4, 6, 8 },
+        new int[] { 0, 7, 1, 5 },
+        new int[] { 8, 3, 1, 1, 2 }
+    };
+            int expected = 30;
+            
 
-        //    // Act
-        //    int result = controller.GetMaxTotal().Value;
+            // Act
+            int result = TriangleController.FindMaxTotal(triangle);
 
-        //    // Assert
-        //    Assert.That(result, Is.EqualTo(5));
-        //}
+            // Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
 
-        //[Test]
-        //public void GetMaxTotal_ReturnsExpectedResult_ForTriangleWithTwoRows()
-        //{
-        //    // Arrange
-        //    var controller = new TriangleController();
-        //    string triangleText = "5\n9 6";
-        //    File.WriteAllText("triangle.txt", triangleText);
+        [Test]
+        public void TestFindMaxTotal_TriangleWithOneValue()
+        {
+            // Arrange
+            int[][] triangle = new int[][] {
+        new int[] { 5 }
+    };
+            int expected = 5;
 
-        //    // Act
-        //    int result = controller.GetMaxTotal().Value;
+            // Act
+            int result = TriangleController.FindMaxTotal(triangle);
 
-        //    // Assert
-        //    Assert.That(result, Is.EqualTo(14));
-        //}
+            // Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
 
-        //[Test]
-        //public void GetMaxTotal_ReturnsExpectedResult_ForTriangleWithMultipleRows()
-        //{
-        //    // Arrange
-        //    var controller = new TriangleController();
-        //    string triangleText = "5\n9 6\n4 6 8\n0 7 1 5\n8 3 1 1 2";
-        //    File.WriteAllText("triangle.txt", triangleText);
+        [Test]
+        public void TestFindMaxTotal_TriangleWithTwoRows()
+        {
+            // Arrange
+            int[][] triangle = new int[][] {
+        new int[] { 5 },
+        new int[] { 2, 3 }
+    };
+            int expected = 8;
 
-        //    // Act
-        //    int result = controller.GetMaxTotal().Value;
+            // Act
+            int result = TriangleController.FindMaxTotal(triangle);
 
-        //    // Assert
-        //    Assert.That(result, Is.EqualTo(30));
-        //}
- 
+            // Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestFindMaxTotal_TriangleWithNegativeValues()
+        {
+            // Arrange
+            int[][] triangle = new int[][] {
+        new int[] { -1 },
+        new int[] { 2, -3 },
+        new int[] { 1, 1, -1 },
+        new int[] { 3, -2, 1, 2 },
+        new int[] { -1, 3, -2, -1, 5 }
+    };
+            int expected = 8;
+
+            // Act
+            int result = TriangleController.FindMaxTotal(triangle);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestFindMaxTotal_TriangleWithAllSameValues()
+        {
+            // Arrange
+            int[][] triangle = new int[][] {
+        new int[] { 5 },
+        new int[] { 5, 5 },
+        new int[] { 5, 5, 5 },
+        new int[] { 5, 5, 5, 5 },
+        new int[] { 5, 5, 5, 5, 5 }
+    };
+            int expected = 25;
+
+            // Act
+            int result = TriangleController.FindMaxTotal(triangle);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+
     }
 }
