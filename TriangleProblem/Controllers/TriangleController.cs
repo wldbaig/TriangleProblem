@@ -12,7 +12,7 @@ namespace TriangleProblem.Controllers
  
         [HttpGet]
         public ActionResult<int> GetMaxTotal()
-        {
+        { 
             try
             {
                 int[][] triangle = ReadTriangleFromFile();
