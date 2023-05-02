@@ -23,4 +23,4 @@ jobs:
       run: |
         dotnet restore
         dotnet build
-        dotnet test TriangleProblem.Test/TriangleProblem.Test.csproj
+        dotnet test TriangleProblems.Test/TriangleProblems.Test.csproj
