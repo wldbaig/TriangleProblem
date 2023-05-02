@@ -46,7 +46,7 @@ namespace TriangleProblem.Controllers
             return triangle;
         }
 
-        private static int FindMaxTotal(int[][] triangle)
+        public static int FindMaxTotal(int[][] triangle)
         {
             int numRows = triangle.Length;
             int[] maxTotals = triangle[numRows - 1];
