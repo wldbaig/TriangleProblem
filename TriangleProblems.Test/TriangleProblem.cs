@@ -15,7 +15,7 @@ namespace TriangleProblems.Test
             int result = controller.GetMaxTotal().Value;
 
             // Assert
-            Assert.AreEqual(732506, result);
+            Assert.That(result, Is.EqualTo(732506));
         }
 
         [Test]
@@ -30,7 +30,7 @@ namespace TriangleProblems.Test
             int result = controller.GetMaxTotal().Value;
 
             // Assert
-            Assert.AreEqual(5, result);
+            Assert.That(result, Is.EqualTo(5));
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace TriangleProblems.Test
             int result = controller.GetMaxTotal().Value;
 
             // Assert
-            Assert.AreEqual(14, result);
+            Assert.That(result, Is.EqualTo(14));
         }
 
         [Test]
@@ -60,7 +60,7 @@ namespace TriangleProblems.Test
             int result = controller.GetMaxTotal().Value;
 
             // Assert
-            Assert.AreEqual(30, result);
+            Assert.That(result, Is.EqualTo(30));
         }
  
     }

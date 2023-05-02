@@ -8,11 +8,11 @@ namespace TriangleProblem.Controllers
     [ApiController]
     public class TriangleController : ControllerBase
     {
-        private const string FilePath = "triangle.txt"; // assume the file is in the same directory as the API
+        private const string FilePath = "triangle.txt";  
  
         [HttpGet]
         public ActionResult<int> GetMaxTotal()
-        {
+        { 
             try
             {
                 int[][] triangle = ReadTriangleFromFile();
@@ -25,7 +25,7 @@ namespace TriangleProblem.Controllers
             }
         }
 
-        private int[][] ReadTriangleFromFile()
+        private static int[][] ReadTriangleFromFile()
         {
             string[] lines = System.IO.File.ReadAllLines(FilePath);
             int[][] triangle = new int[lines.Length][];
@@ -46,7 +46,7 @@ namespace TriangleProblem.Controllers
             return triangle;
         }
 
-        private int FindMaxTotal(int[][] triangle)
+        private static int FindMaxTotal(int[][] triangle)
         {
             int numRows = triangle.Length;
             int[] maxTotals = triangle[numRows - 1];
